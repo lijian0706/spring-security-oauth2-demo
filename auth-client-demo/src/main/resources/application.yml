@@ -1,0 +1,29 @@
+auth-server:
+  client:
+    clientId: client
+    clientSecret: client
+    accessTokenUri: http://127.0.0.1:8080/auth/oauth/token
+    userAuthorizationUri: http://127.0.0.1:8080/auth/oauth/authorize
+    tokenName: access_token
+    authenticationScheme: query
+    clientAuthenticationScheme: form
+  resource:
+    userInfoUri: http://127.0.0.1:8080/auth/sysUsers/user
+#auth-server:
+#  client:
+#    clientId: 688d57b54665e1ee0f2e
+#    clientSecret: 5f19c791ebc04662f92c55952beb1f89117f0710
+#    accessTokenUri: https://github.com/login/oauth/access_token
+#    userAuthorizationUri: https://github.com/login/oauth/authorize
+#    tokenName: access_token
+#    authenticationScheme: query
+#    clientAuthenticationScheme: form
+#  resource:
+#    userInfoUri: https://api.github.com/user
+server:
+  port: 8081
+  servlet:
+    session:
+      cookie:
+        name: OAUTH2SESSION # This is to prevent cookie clash with other service as they run on the same host and context path
+logging.level.org.springframework: debug
