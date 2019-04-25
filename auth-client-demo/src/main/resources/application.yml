@@ -11,8 +11,8 @@ auth-server:
     userInfoUri: http://127.0.0.1:8080/auth/sysUsers/user
 #auth-server:
 #  client:
-#    clientId: 688d57b54665e1ee0f2e
-#    clientSecret: 5f19c791ebc04662f92c55952beb1f89117f0710
+#    clientId: x
+#    clientSecret: x
 #    accessTokenUri: https://github.com/login/oauth/access_token
 #    userAuthorizationUri: https://github.com/login/oauth/authorize
 #    tokenName: access_token
