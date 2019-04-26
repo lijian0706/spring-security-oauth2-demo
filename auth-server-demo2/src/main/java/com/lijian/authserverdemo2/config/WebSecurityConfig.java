@@ -14,7 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-@Order(2)
+@Order(2) // 调整优先级，比ResourceServerConfig高
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
@@ -33,6 +33,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         super.configure(web);
     }
 
+    /**
+     * 只拦截/login，/oauth/authorize路径，其他交由oauth进行拦截
+     * @param http
+     * @throws Exception
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.requestMatchers().antMatchers("/login", "/oauth/authorize").and()
