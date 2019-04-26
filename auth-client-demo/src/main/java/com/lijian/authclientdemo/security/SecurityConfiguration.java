@@ -45,6 +45,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .addFilterBefore(ssoFilter(), BasicAuthenticationFilter.class);
     }
 
+    /**
+     * 若需要集成多个服务器，可以配置多个filter，并加入到流程中，参考：.addFilterBefore(ssoFilter(), BasicAuthenticationFilter.class);
+     * @return
+     */
     private Filter ssoFilter() {
         OAuth2ClientAuthenticationProcessingFilter authServerFilter = new OAuth2ClientAuthenticationProcessingFilter("/login/authServer");
         OAuth2RestTemplate authServerTemplate = new OAuth2RestTemplate(authClient(), oauth2ClientContext);

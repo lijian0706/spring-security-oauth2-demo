@@ -9,6 +9,8 @@ auth-server:
     clientAuthenticationScheme: form
   resource:
     userInfoUri: http://127.0.0.1:8080/auth/sysUsers/user
+
+# 以下是github 服务器的配置
 #auth-server:
 #  client:
 #    clientId: x
@@ -25,5 +27,5 @@ server:
   servlet:
     session:
       cookie:
-        name: OAUTH2SESSION # This is to prevent cookie clash with other service as they run on the same host and context path
+        name: OAUTH2SESSION
 logging.level.org.springframework: debug
