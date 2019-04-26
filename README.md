@@ -311,3 +311,5 @@ if (request.getStateKey() != null || stateMandatory) {
 ## 备注
 - 授权、获取token可参考：`TokenEndpoint`、`AuthorizationEndpoint`、`CheckTokenEndpoint`
 
+---
+源码地址：[github](https://github.com/lijian0706/spring-security-oauth2-demo)
