@@ -1,2 +1,2 @@
 # spring-security-oauth2-demo
-包含sso服务器与客户端
+包含sso服务器与客户端，客户端applicatioin.yml配置文件中配置了集成github的方式，只需要填写client_id，client_secret即可
