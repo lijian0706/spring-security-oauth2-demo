@@ -308,6 +308,9 @@ if (request.getStateKey() != null || stateMandatory) {
 - 原因分析：看到oauth应该知道，被oauth相关的filter拦截掉了，原因是`ResourceServer`的配置类较`WebSecurity`配置类优先级高。
 - 这里采取的解决办法是将`WebSecurity`配置类优先级往前排`@Order(2)`，另外只针对`/login`和`/oauth/authorize`两个路径进行拦截(意思是：若在未登录的情况下访问这两个路径，会被重定向到登录页面)，而其他则由`ResourceServer`进行拦截。
 
+### `Handling OAuth2 error: error="invalid_grant", error_description="Invalid redirect: http://127.0.0.1:8081/login/authServer does not match one of the registered values."`
+- 这是由于重定向的url和注册的不一致，可以进入`DefaultRedirectResolver.resolveRedirect()`中检查`registeredRedirectUris`和`requestedRedirect`，前者是注册的重定向url，后者是实际重定向的url，注意观察是否是`127.0.0.1`和`localhost`的区别导致的。
+
 ## 备注
 - 授权、获取token可参考：`TokenEndpoint`、`AuthorizationEndpoint`、`CheckTokenEndpoint`
 
