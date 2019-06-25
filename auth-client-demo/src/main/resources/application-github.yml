@@ -1,7 +1,7 @@
 auth-server:
   client:
-    clientId: x
-    clientSecret: x
+    clientId: x # 由github分配
+    clientSecret: x # 由github分配
     accessTokenUri: https://github.com/login/oauth/access_token
     userAuthorizationUri: https://github.com/login/oauth/authorize
     tokenName: access_token
