@@ -25,7 +25,7 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
     }
 
     @Override
-    public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
+    public void configure(AuthorizationServerSecurityConfigurer security) {
         security.allowFormAuthenticationForClients(); // 允许客户端使用form提交，若没有这行代码，会使用basic方式提交，客户端账号、密码会放在headers中：Basic Y2xpZW50OmNsaWVudA==
     }
 
