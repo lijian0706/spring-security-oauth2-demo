@@ -24,6 +24,11 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
+    @Bean
+    public JpaClientDetailsService jpaClientDetailsService(){
+        return new JpaClientDetailsService();
+    }
+
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) {
         security.allowFormAuthenticationForClients(); // 允许客户端使用form提交，若没有这行代码，会使用basic方式提交，客户端账号、密码会放在headers中：Basic Y2xpZW50OmNsaWVudA==
@@ -31,12 +36,7 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients.inMemory()
-            .withClient("client")
-            .secret(passwordEncoder().encode("client"))
-            .scopes("read")
-            .authorizedGrantTypes("password", "authorization_code", "refresh_token", "client_credentials", "implicit")
-            .redirectUris("http://localhost:8081/login/authServer");
+        clients.withClientDetails(jpaClientDetailsService());
     }
 
     @Override
@@ -44,4 +44,8 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
         endpoints.authenticationManager(authenticationManager); // 为了支持password授权类型，必须配置authenticationManager
     }
 
+    public static void main(String[] args) {
+        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        System.out.println(passwordEncoder.encode("client"));
+    }
 }
