@@ -1,4 +1,4 @@
-package com.lijian.authserverdemo2.controller;
+package com.lijian.authserver.controller;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;

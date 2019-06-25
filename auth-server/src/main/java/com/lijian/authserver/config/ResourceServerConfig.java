@@ -1,4 +1,4 @@
-package com.lijian.authserverdemo2.config;
+package com.lijian.authserver.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

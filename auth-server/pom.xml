@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.lijian</groupId>
-	<artifactId>auth-server-demo2</artifactId>
+	<artifactId>auth-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>auth-server-demo2</name>
+	<name>auth-server</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
