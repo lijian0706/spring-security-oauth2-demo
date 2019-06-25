@@ -19,6 +19,7 @@
 		<spring-cloud.version>Greenwich.SR1</spring-cloud.version>
 	</properties>
 
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
