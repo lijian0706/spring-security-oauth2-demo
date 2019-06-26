@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>授权页面</title>
+    <script src="/auth/webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="/auth/webjars/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+    是否同意授权<b th:text="${authorizationRequest.clientId}"></b>?：
+    <form action="/auth/oauth/authorize" method="post" id="form">
+        <input type="hidden" name="user_oauth_approval" value="true"/>
+        <input type="hidden" name="authorize" value="Authorize"/>
+        <div id="div"></div>
+        <input type="submit">
+    </form>
+
+
+</body>
+<script th:inline="javascript">
+    var authorizationRequest = [[${authorizationRequest}]];
+    console.log(authorizationRequest);
+
+    var div = document.getElementById('div');
+    var scopes = authorizationRequest.scope;
+    for (var i = 0; i < scopes.length; i++) {
+        div.innerHTML += scopes[i] + ":" + "同意：<input type='radio' name='scope."+scopes[i]+"' value='true'>" + "拒绝：<input type='radio' name='scope."+scopes[i]+"' value='false' checked><br>";
+    }
+</script>
+</html>

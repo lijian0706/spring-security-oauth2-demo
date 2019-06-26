@@ -10,10 +10,7 @@ import org.springframework.util.StringUtils;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @Author: Lijian
@@ -72,7 +69,7 @@ public class Client implements ClientDetails {
 
     @Override
     public Collection<GrantedAuthority> getAuthorities() {
-        return null;
+        return new ArrayList<>();
     }
 
     @Override
