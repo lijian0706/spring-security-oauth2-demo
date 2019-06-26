@@ -313,6 +313,10 @@ if (request.getStateKey() != null || stateMandatory) {
 
 ## 备注
 - 授权、获取token可参考：`TokenEndpoint`、`AuthorizationEndpoint`、`CheckTokenEndpoint`
+- 源码参考tag:0.0.1-SNAPSHOT
+- 0.0.2-SNAPSHOT请参考文档，在此基础上进行了如下升级：
+	- 用户、客户端使用数据库进行存储
+	- 自定义用户授权页面
 
 ---
 源码地址：[github](https://github.com/lijian0706/spring-security-oauth2-demo)
