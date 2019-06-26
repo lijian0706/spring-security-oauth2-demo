@@ -1,13 +1,14 @@
 ## 简介
-- 本次教程源码tag为：`0.0.2-SNAPSHOT`，在之前的版本基础上进行了如下改进：
+- 本次教程承接[Spring Boot + Spring Security Oauth 搭建SSO服务器和客户端教程](http://blog.lijian0706.cn/2019/06/03/spring-security-sso/)，源码tag为：`0.0.2-SNAPSHOT`，在之前的版本基础上进行了如下改进：
 	- 用户、客户端使用数据库进行存储
 	- 自定义用户授权页面
 
 ## 用户
-	- 用户的配置可参考`http://blog.lijian0706.cn/2019/06/03/security-getting-started/`本篇文章
+
+- 用户的配置可参考[Spring Security 快速入门](http://blog.lijian0706.cn/2019/06/03/security-getting-started/)
 
 ## 授权客户端
-	- 客户端的配置与用户配置极为类似，代码如下。
+- 客户端的配置与用户配置极为类似，代码如下。
 ### 实体类
 
 ```
